@@ -1,5 +1,5 @@
-LAMPIRAN
-Source Code Simulasi Subpopulasi Susceptible
+%%% LAMPIRAN
+%% Simulasi Subpopulasi Susceptible
 % MATLAB code for plotting
 clc;
 clear;
@@ -21,7 +21,7 @@ title('Grafik Penyebaran Penyakit Hepatitis');
 ylim([0, 4e4]);
 xlim([0, 30]);
 ________________________________________
-Source Code Simulasi Subpopulasi Exposed
+%% Source Code Simulasi Subpopulasi Exposed
 % MATLAB code for plotting
 clc;
 clear;
@@ -44,7 +44,7 @@ title('Grafik Penyebaran Penyakit Hepatitis');
 ylim([0, 3.5e4]);
 xlim([0, 30]);
 ________________________________________
-Source Code Simulasi Subpopulasi Infected
+%% Source Code Simulasi Subpopulasi Infected
 % MATLAB code for plotting
 clc;
 clear;
@@ -68,7 +68,7 @@ title('Grafik Penyebaran Penyakit Hepatitis');
 ylim([20, 160]);
 xlim([0, 30]);
 ________________________________________
-Source Code Simulasi Subpopulasi Recovered
+%% Source Code Simulasi Subpopulasi Recovered
 % Parameter simulasi
 waktu = linspace(0, 30, 100); % Waktu dalam bulan
 a = 100; % Amplitudo (maksimum jumlah individu sembuh)
@@ -85,4 +85,3 @@ ylabel('Jumlah individu yang telah sembuh');
 grid on;
 % Sesuaikan tampilan
 set(gca, 'FontSize', 12);
-
