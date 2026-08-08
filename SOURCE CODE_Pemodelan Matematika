@@ -1,0 +1,88 @@
+LAMPIRAN
+Source Code Simulasi Subpopulasi Susceptible
+% MATLAB code for plotting
+clc;
+clear;
+% Parameter
+t = linspace(0, 30, 1000); % Waktu (bulan)
+N0 = 3.5e4; % Populasi awal individu yang berpotensi terinfeksi
+k = 1; % Laju penurunan
+% Fungsi distribusi individu yang berpotensi terinfeksi
+N = N0 * exp(-k * t);
+% Plot grafik
+figure;
+plot(t, N, 'g', 'LineWidth', 1);
+grid on;
+% Pengaturan axis
+xlabel('Waktu (bulan)');
+ylabel('Jumlah individu yang berpotensi terinfeksi');
+title('Grafik Penyebaran Penyakit Hepatitis');
+% Pengaturan skala
+ylim([0, 4e4]);
+xlim([0, 30]);
+________________________________________
+Source Code Simulasi Subpopulasi Exposed
+% MATLAB code for plotting
+clc;
+clear;
+% Parameter
+t = linspace(0, 30, 1000); % Waktu (bulan)
+N0 = 3e4; % Jumlah awal individu yang menunjukkan gejala
+t_peak = 5; % Waktu puncak gejala (bulan)
+sigma = 3; % Penyebaran atau deviasi standar (bulan)
+% Fungsi distribusi individu yang menunjukkan gejala
+N = N0 * exp(-((t - t_peak).^2) / (2 * sigma^2));
+% Plot grafik
+figure;
+plot(t, N, 'b', 'LineWidth', 1);
+grid on;
+% Pengaturan axis
+xlabel('Waktu (bulan)');
+ylabel('Jumlah individu yang memperlihatkan gejala');
+title('Grafik Penyebaran Penyakit Hepatitis');
+% Pengaturan skala
+ylim([0, 3.5e4]);
+xlim([0, 30]);
+________________________________________
+Source Code Simulasi Subpopulasi Infected
+% MATLAB code for plotting
+clc;
+clear;
+% Parameter
+t = linspace(0, 30, 1000); % Waktu (bulan)
+N0 = 40; % Populasi awal individu terinfeksi
+Nmax = 140; % Puncak jumlah individu yang terinfeksi
+t_peak = 6; % Waktu puncak infeksi (bulan)
+sigma = 5; % Parameter penyebaran waktu (deviasi standar)
+% Fungsi jumlah individu yang telah terinfeksi
+N = N0 + (Nmax - N0) * exp(-((t - t_peak).^2) / (2 * sigma^2));
+% Plot grafik
+figure;
+plot(t, N, 'r', 'LineWidth', 1);
+grid on;
+% Pengaturan axis
+xlabel('Waktu (bulan)');
+ylabel('Jumlah individu yang telah terinfeksi');
+title('Grafik Penyebaran Penyakit Hepatitis');
+% Pengaturan skala
+ylim([20, 160]);
+xlim([0, 30]);
+________________________________________
+Source Code Simulasi Subpopulasi Recovered
+% Parameter simulasi
+waktu = linspace(0, 30, 100); % Waktu dalam bulan
+a = 100; % Amplitudo (maksimum jumlah individu sembuh)
+b = 15; % Lokasi puncak
+c = 10; % Lebar distribusi
+% Model pemulihan (contoh kurva Gaussian terbalik)
+jumlah_sembuh = a * exp(-((waktu - b).^2) / (2 * c^2)) + 40; % Menyesuaikan dengan nilai minimum
+% Plot grafik
+figure;
+plot(waktu, jumlah_sembuh, 'y', 'LineWidth', 1.5);
+title('Grafik Penyebaran Penyakit Hepatitis');
+xlabel('Waktu (bulan)');
+ylabel('Jumlah individu yang telah sembuh');
+grid on;
+% Sesuaikan tampilan
+set(gca, 'FontSize', 12);
+
